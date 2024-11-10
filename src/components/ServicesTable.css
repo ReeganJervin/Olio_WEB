@@ -1,0 +1,226 @@
+/* src/components/ServicesTable.css */
+
+.table-container {
+  background-color: #f8fcf8;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.table-header h2 {
+  font-size: 24px;
+  color: #1b7c71;
+}
+
+/* Modal Title Styling */
+.modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1b7c71;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+/* Buttons Styling */
+.add-service-button {
+  background-color: #1b7c71;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+.add-service-button:hover {
+  background-color: #145a4a;
+}
+
+.cancel-button {
+  color: #9e9e9e;
+  font-size: 14px;
+}
+
+.create-button {
+  background-color: #1b7c71;
+  color: white;
+  font-size: 14px;
+}
+
+.create-button:hover {
+  background-color: #145a4a;
+}
+
+/* Modal Title Styling */
+.modal-title {
+  font-size: 16px; /* Smaller font size */
+  font-weight: 600;
+  color: #1b7c71;
+  padding-bottom: 8px;
+  text-align: center;
+}
+
+/* Buttons Styling */
+.add-service-button {
+  background-color: #1b7c71;
+  color: white;
+  padding: 6px 12px; /* Smaller padding */
+  border-radius: 5px;
+}
+
+.cancel-button {
+  color: #9e9e9e;
+  font-size: 14px;
+}
+
+.create-button {
+  background-color: #1b7c71;
+  color: white;
+  font-size: 14px;
+}
+
+/* Input Fields Styling */
+.MuiInputBase-input {
+  font-size: 14px;
+  padding: 8px 10px; /* Smaller padding for compact look */
+}
+
+/* Dropdown Menu Styling */
+.MuiMenuItem-root {
+  font-size: 14px;
+  padding: 8px 16px; /* Adjusted padding */
+}
+
+/* Dialog Container Customization */
+.MuiDialog-paper {
+  border-radius: 10px;
+  padding: 10px 20px; /* Smaller padding */
+}
+
+
+.table-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.filter-button {
+  padding: 8px 16px;
+  border: 1px solid #c1e6d5;
+  background-color: #f8fcf8;
+  color: #1b7c71;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-button.active {
+  background-color: #1b7c71;
+  color: white;
+}
+
+.search-input {
+  padding: 8px;
+  border: 1px solid #c1e6d5;
+  border-radius: 5px;
+}
+
+.clear-button {
+  background-color: #ff5c5c;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.styled-table thead tr {
+  background-color: #e0f7f1;
+  color: #1b7c71;
+  text-align: left;
+  font-weight: bold;
+}
+
+.styled-table th{
+  text-align: center;
+  padding: 12px 15px;
+}
+.styled-table th, .styled-table td {
+  padding: 12px 15px;
+  text-align: center;
+
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #c1e6d5;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f8fcf8;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #1b7c71;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #e6fffa;
+}
+
+
+
+.edit-button, .view-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.page-info {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination span {
+  margin: 0 5px;
+  margin-right: 25%;
+}
+
+.action-buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.edit-button {
+  color: #4CAF50; /* Green */
+}
+
+.view-button {
+  color: #2196F3; /* Blue */
+}
+
+.delete-button {
+  color: #F44336; /* Red */
+}
