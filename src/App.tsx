@@ -1,6 +1,5 @@
 // src/pages/AdminPage.jsx
-import React from 'react';
-import Header from '../src/components/Header';
+import Header from './components/Header';
 import DataTable from '../src/components/DataTable';
 import Sidebar from '../src/components/Sidebar';
 import { Box } from '@mui/material';

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Drawer, List, ListItem, ListItemIcon, ListItemText, Divider, Box } from '@mui/material';
+import { Drawer, List, ListItemButton, ListItemIcon, ListItemText, Divider, Box } from '@mui/material';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import BuildIcon from '@mui/icons-material/Build';
 import PeopleIcon from '@mui/icons-material/People';
@@ -15,8 +14,8 @@ const menuItems = [
   { label: 'Vendors', icon: <LocalShippingIcon />, path: '/vendors' },
 ];
 
-// Styled component for ListItem with hover and selected styling
-const StyledListItem = styled(ListItem)(({ theme }) => ({
+// Styled component for ListItemButton with hover and selected styling
+const StyledListItemButton = styled(ListItemButton)(({ theme }) => ({
   padding: theme.spacing(1.5, 3),
   borderRadius: theme.shape.borderRadius,
   '&:hover': {
@@ -42,8 +41,8 @@ function Sidebar() {
         [`& .MuiDrawer-paper`]: {
           width: drawerWidth,
           boxSizing: 'border-box',
-          backgroundColor: '#f5f5f5',  // Light background color
-          color: '#333333',            // Dark text color for contrast
+          backgroundColor: '#f5f5f5', // Light background color
+          color: '#333333', // Dark text color for contrast
         },
       }}
     >
@@ -53,27 +52,24 @@ function Sidebar() {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          
         }}
       >
         <img src="../public/new.png" alt="Logo" style={{ width: '70%', maxWidth: 150 }} />
       </Box>
-      
+
       <Divider />
 
       {/* Menu Items */}
       <List>
         {menuItems.map((item, index) => (
-          <StyledListItem
-            button
+          <StyledListItemButton
             key={index}
-            component="a"
-            href={item.path}
-            selected={window.location.pathname === item.path} // Highlight if path matches
+            onClick={() => (window.location.href = item.path)}
+            selected={window.location.pathname === item.path}
           >
             <ListItemIcon sx={{ color: 'inherit', minWidth: 40 }}>{item.icon}</ListItemIcon>
             <ListItemText primary={item.label} sx={{ fontWeight: 500 }} />
-          </StyledListItem>
+          </StyledListItemButton>
         ))}
       </List>
     </Drawer>

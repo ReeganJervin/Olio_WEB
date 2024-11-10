@@ -21,7 +21,7 @@ api.interceptors.response.use(
 );
 
 // Define CRUD methods using the axios instance
-export const fetchData = async (endpoint) => {
+export const fetchData = async (endpoint: string) => {
   try {
     const response = await api.get(endpoint);
     return response.data;
@@ -31,7 +31,7 @@ export const fetchData = async (endpoint) => {
   }
 };
 
-export const postData = async (endpoint, data) => {
+export const postData = async (endpoint: string, data: any) => {
   try {
     const response = await api.post(endpoint, data);
     return response.data;
@@ -41,7 +41,7 @@ export const postData = async (endpoint, data) => {
   }
 };
 
-export const putData = async (endpoint, data) => {
+export const putData = async (endpoint: string, data: any) => {
   try {
     const response = await api.put(endpoint, data);
     return response.data;
@@ -51,7 +51,7 @@ export const putData = async (endpoint, data) => {
   }
 };
 
-export const deleteData = async (endpoint) => {
+export const deleteData = async (endpoint: string) => {
   try {
     const response = await api.delete(endpoint);
     return response.data;
