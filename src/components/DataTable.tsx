@@ -1,7 +1,7 @@
 // src/components/ServicesTable.js
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { fetchData, postData, putData, deleteData } from '../api'; // Import `putData` for updating services
-import { Dialog, DialogTitle, DialogContent, DialogActions, TextField, MenuItem, Button, ButtonGroup, IconButton, RadioGroup, FormControlLabel, Radio, FormControl, FormLabel } from '@mui/material';
+import { Dialog, DialogTitle, DialogContent, DialogActions, TextField, MenuItem, Button, ButtonGroup, IconButton} from '@mui/material';
 import Grid from '@mui/material/Grid';
 import EditIcon from '@mui/icons-material/Edit';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -50,7 +50,7 @@ const ServicesTable = () => {
     resetServiceForm();
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e : any) => {
     setNewService({ ...newService, [e.target.name]: e.target.value });
   };
 
@@ -75,7 +75,7 @@ const ServicesTable = () => {
     }
   };
 
-  const handleEdit = (service) => {
+  const handleEdit = (service : any) => {
     setCurrentServiceId(service.id); // Set the ID of the service being edited
     setNewService({
       name: service.name,
@@ -98,15 +98,15 @@ const ServicesTable = () => {
     });
   };
 
-  const filteredServices = services.filter(service => {
+  const filteredServices = services.filter((service : any) => {
     console.log("Service Status:", service.active_status, "Current Filter:", filter);
     if (filter === 'All' || service.active_status === filter) {
-      return !search || Object.values(service).some(val => val.toString().toLowerCase().includes(search.toLowerCase()));
+      return !search || Object.values(service).some((val : any ) => val.toString().toLowerCase().includes(search.toLowerCase()));
     }
     return false;
   });
 
-  const handleView = (service) => {
+  const handleView = (service : any) => {
     setCurrentServiceId(service.id); // Set the ID of the service being edited
     setNewService({
       name: service.name,
@@ -136,19 +136,19 @@ const ServicesTable = () => {
     if (currentPage > 1) setCurrentPage(currentPage - 1);
   };
 
-  const handleFilterChange = (newFilter) => {
+  const handleFilterChange = (newFilter : any) => {
     setFilter(newFilter);
     setCurrentPage(1); // Reset to first page when filter changes
   };
 
-  const handleItemsPerPageChange = (event) => {
+  const handleItemsPerPageChange = (event : any) => {
     setItemsPerPage(parseInt(event.target.value, 10));
     setCurrentPage(1); // Reset to first page when items per page changes
   };
 
-  const handleSliderChange = (event, newValue) => {
-    handleItemsPerPageChange({ target: { value: newValue } });
-  };
+  // const handleSliderChange = (event, newValue) => {
+  //   handleItemsPerPageChange({ target: { value: newValue } });
+  // };
   const handleSubmit = () => {
     if (!newService.name.trim()) {
       setNameError(true);
@@ -158,12 +158,12 @@ const ServicesTable = () => {
     }
   };
 
-  const handleDelete = async (serviceId) => {
+  const handleDelete = async (serviceId : any) => {
     const confirmDelete = window.confirm("Are you sure you want to delete this service?");
     if (confirmDelete) {
       try {
         await deleteData(`/api/v1/services/${serviceId}`);
-        const updatedServices = services.filter(service => service.id !== serviceId);
+        const updatedServices = services.filter((service: any) => service.id !== serviceId);
         setServices(updatedServices);
       } catch (error) {
         console.error("Failed to delete service:", error);
@@ -208,7 +208,7 @@ const ServicesTable = () => {
           </tr>
         </thead>
         <tbody>
-          {currentServices.map((service, index) => (
+          {currentServices.map((service : any, index) => (
             <tr key={index}>
               <td style={{textAlign:'left'}}>{service.name}</td>
               <td>{service.category}</td>
